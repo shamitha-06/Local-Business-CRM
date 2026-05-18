@@ -227,12 +227,9 @@ npm run build
 # 🚀 Future Enhancements
 
 * Vendor management module
-* CRM automation workflows
-* AI sales forecasting
+* Voice-based CRM automation model
 * Invoice and billing system
 * Mobile application
-* Advanced analytics dashboard
-* Role-based access control
 
 ---
 
