@@ -227,14 +227,12 @@ npm run build
 # 🚀 Future Enhancements
 
 * Vendor management module
-* WhatsApp integration
 * CRM automation workflows
 * AI sales forecasting
 * Invoice and billing system
 * Mobile application
 * Advanced analytics dashboard
 * Role-based access control
-* Cloud deployment integration
 
 ---
 
