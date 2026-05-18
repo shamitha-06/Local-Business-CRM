@@ -1,0 +1,97 @@
+{
+  "entities": {
+    "Business": {
+      "title": "Business",
+      "description": "Business profile for the owner",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "category": { "type": "string" },
+        "ownerName": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "phone": { "type": "string" },
+        "logoUrl": { "type": "string" },
+        "address": { "type": "string" },
+        "description": { "type": "string" },
+        "workingHours": { "type": "string" },
+        "socialLinks": { "type": "object" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "category", "ownerName", "email"]
+    },
+    "Customer": {
+      "title": "Customer",
+      "description": "Customer record for a business",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "businessId": { "type": "string" },
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "address": { "type": "string" },
+        "type": { "type": "string", "enum": ["Regular", "New", "VIP", "Churn Risk"] },
+        "lastInteraction": { "type": "string", "format": "date-time" },
+        "visitCount": { "type": "integer" },
+        "totalSpent": { "type": "number" },
+        "sentiment": { "type": "string", "enum": ["Positive", "Neutral", "Negative"] },
+        "churnScore": { "type": "number" },
+        "notes": { "type": "string" },
+        "relationshipScore": { "type": "number" }
+      },
+      "required": ["businessId", "name", "phone"]
+    },
+    "Lead": {
+      "title": "Lead",
+      "description": "Potential customer in the pipeline",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "businessId": { "type": "string" },
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "status": { "type": "string", "enum": ["New Lead", "Contacted", "Interested", "Follow-up Pending", "Converted", "Repeat"] },
+        "score": { "type": "integer" },
+        "notes": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["businessId", "name"]
+    },
+    "Reminder": {
+      "title": "Reminder",
+      "description": "Business reminders for followups or service",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "businessId": { "type": "string" },
+        "customerId": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "date": { "type": "string", "format": "date-time" },
+        "type": { "type": "string", "enum": ["Follow-up", "Service", "Appointment", "Birthday", "Payment"] },
+        "status": { "type": "string", "enum": ["Pending", "Completed", "Dismissed"] }
+      },
+      "required": ["businessId", "title", "date"]
+    }
+  },
+  "firestore": {
+    "/businesses/{businessId}": {
+      "schema": "Business",
+      "description": "Root collection for businesses"
+    },
+    "/businesses/{businessId}/customers/{customerId}": {
+      "schema": "Customer",
+      "description": "Customers belonging to a business"
+    },
+    "/businesses/{businessId}/leads/{leadId}": {
+      "schema": "Lead",
+      "description": "Leads belonging to a business"
+    },
+    "/businesses/{businessId}/reminders/{reminderId}": {
+      "schema": "Reminder",
+      "description": "Reminders belonging to a business"
+    }
+  }
+}

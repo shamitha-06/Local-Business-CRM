@@ -1,0 +1,10 @@
+{
+  "name": "Local CRM",
+  "description": "An intelligent CRM platform for local business owners to manage customers, track leads, and automate growth with AI-powered insights and reminders.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
