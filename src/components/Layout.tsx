@@ -96,7 +96,7 @@ const Layout: React.FC = () => {
           >
             <Sparkles className="w-5 h-5" />
           </div>
-          <span className="font-bold text-xl tracking-tight text-slate-800 dark:text-white leading-tight">LocalConnect AI<br/>CRM</span>
+          <span className="font-bold text-xl tracking-tight text-slate-800 dark:text-white leading-tight">ShopSaathi<br/></span>
         </div>
 
         <nav className="flex-1 px-6 space-y-2">
@@ -224,7 +224,7 @@ const Layout: React.FC = () => {
           </button>
           <div className="flex items-center gap-2">
             <Sparkles className="w-6 h-6" style={{ color: themeColor }} />
-            <span className="font-bold text-slate-900 dark:text-white">LocalConnect AI CRM</span>
+            <span className="font-bold text-slate-900 dark:text-white">ShopSaathi</span>
           </div>
           <div className="w-10" /> {/* Spacer */}
         </div>
@@ -256,7 +256,7 @@ const Layout: React.FC = () => {
                     >
                       <Sparkles className="w-5 h-5" />
                     </div>
-                    <span className="font-bold text-lg dark:text-white">LocalConnect AI CRM</span>
+                    <span className="font-bold text-lg dark:text-white">ShopSaathi</span>
                   </div>
                   <button onClick={() => setSidebarOpen(false)} className="p-2 text-slate-600 dark:text-slate-400">
                     <X className="w-5 h-5" />
